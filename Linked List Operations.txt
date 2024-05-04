@@ -1,0 +1,118 @@
+Algorithms for linked list operations
+
+Display:
+display(head)
+This operation is used to display the data in the
+node of the linked list starting from head node.
+Steps to perform this operation
+Step1:
+If head == NULL (Means if there are no nodes in
+the given list)
+	Just print "No Nodes to Display";
+Else
+	1. Take a temporary node temp and store head
+		inside it (temp = head)
+	2. Run a loop as long as temp != NULL
+		 I. Print the data at current node, means
+	    	 print temp -> data
+		 II. Set temp to temp -> next (Means move
+			  temp to next node).
+
+Insertion at head:
+insert_at_head(nn);
+In this operation you will try to insert a new
+node at the head of a given linked list.
+To achieve this you can follow the below given
+steps
+Step 1:
+	If there are no nodes in the list (means
+	if head == NULL). The the node to be inserted
+	will be the first node.
+		So,
+		Set head to nn (means head = nn)
+	Else
+		1. Place head node at next part of new
+			node (means set nn -> next = head);
+		2. Understand that you connect entire
+			list to your new node. So new node
+			is your head now.
+		3. So set head to new node (means
+			write head = nn;
+
+Insertion at the end (tail) of the linked list:
+insert_at_end(nn)
+In this operation we will try to insert a new
+node at the end of the list.
+This can be done as follows
+Step1:
+	If list is empty (means head == NULL) then
+	the one to be inserted will be the only
+	node in the list.
+	So,
+		Set head to new node (means)
+		write head = nn
+	Else
+		We have to stop at the last node,
+		so that we can set it's next part
+		to new node thus creating a link.
+		So,
+		1. Take a temp to traverse through
+			the list and set it to head.
+		2. Run a loop till temp -> next != NULL.
+			Always move temp to the next node by
+			writing 
+				temp = temp -> next
+		3. Now the node that we are having in
+			temp now will be the last node.
+			Insert our new node nn at next part
+			of temp. Means write
+			temp -> next = nn;
+
+
+Deletion at head:
+delete_at_head()
+In this operation we will delete a node from
+head position.
+It can be implemented as follows
+Step1:
+	If list is already empty (head == NULL)
+	we will print No Nodes
+	Else:
+		We we print the head node value
+		(head -> val) is deleted.
+		And will move head to head -> next.
+		(head = head -> next)
+		In this way the head now points to
+		next node.
+
+
+
+Deletion at end:
+delete_at_end()
+In this operation we will delete a node from
+end (tail).
+Implementation is given below.
+Step1:
+	If list is already empty (head == NULL)
+	we will print No Nodes
+	Else if list is containing only single
+	node (head -> next == NULL) 
+		We will print head -> data is deleted
+		and sets head to NULL (deleting element)
+	Else
+		We have to reach last but one node 
+		so that we can set its next part to NULL,
+		Indicating that we deleted last node and
+		made last but one node as tail (end).
+		
+		We can do that as follows
+		1. Take a temp to traverse through
+			the list and set it to head.
+		2. Run a loop till temp -> next -> next != NULL
+				move temp to temp -> next.
+		3. By the time loop ends you can find that
+			temp will be at last but one node.
+		4. Print deleted element is temp -> next -> val.
+			And set temp -> next (next part of last but one
+			node) to NULL.
+
